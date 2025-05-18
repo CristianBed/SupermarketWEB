@@ -1,31 +1,30 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using SupermarketWEB.Data;
-using SupermarketWEB.Models;
-
-namespace SupermarketWEB.Pages.Categories
+using SuperMarketWEB.Data;
+using SuperMarketWEB.Models;
+namespace SuperMarketWEB.Pages.Categories
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
-        private readonly SumpermarketContext _Context;
-        public IndexModel(SumpermarketContext context)
+        private readonly SupermarketContext _context;
+
+        public IndexModel(SupermarketContext context)
         {
-            _Context = context;
+            _context = context;
         }
+
         public IList<Category> Categories { get; set; } = default!;
 
-        public async Task OneGetAsync()
+        public async Task OnGetAsync()
         {
-            if (_Context.Categories != null)
+            if (_context.Categories != null)
             {
-                Categories = await _Context.Categories.ToListAsync();
+                Categories = await _context.Categories.ToListAsync();
             }
         }
-        
     }
-        
 }
-
-
 
