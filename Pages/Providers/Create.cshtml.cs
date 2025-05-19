@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SuperMarketWEB.Data;
 using SuperMarketWEB.Models;
 
+
 namespace SupermarketWEB.Pages.Provider
 {
     [Authorize]
