@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using SuperMarketWEB.Data;
 using SuperMarketWEB.Models;
 
-namespace SupermarketWEB.Pages.PayModes
+namespace SuperMarketWEB.Pages.Products
 {
     [Authorize]
     public class IndexModel : PageModel
@@ -17,14 +17,13 @@ namespace SupermarketWEB.Pages.PayModes
             _context = context;
         }
 
-        public IList<PayMode> PayModes{ get; set; } = default!;
+        public IList<Product> Products { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
-            // condición para las categorias
-            if (_context.PayModes != null)
+            if (_context.Products != null)
             {
-                PayModes = await _context.PayModes.ToListAsync();
+                Products = await _context.Products.ToListAsync();
             }
         }
     }
