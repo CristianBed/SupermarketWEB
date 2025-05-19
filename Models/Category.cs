@@ -1,6 +1,4 @@
-﻿using SupermarketWEB.Models;
-
-namespace SuperMarketWEB.Models
+﻿namespace SuperMarketWEB.Models
 {
     public class Category
     {

@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Razor.TagHelpers;
-using Microsoft.EntityFrameworkCore;
-using SupermarketWEB.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SuperMarketWEB.Models;
 
 namespace SuperMarketWEB.Data
 {
