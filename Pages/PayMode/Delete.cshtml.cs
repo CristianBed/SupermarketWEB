@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using SuperMarketWEB.Data;
 using SuperMarketWEB.Models;
 
-namespace SupermarketWEB.Pages.PayModes
+namespace SupermarketWEB.Pages.PayModes|
 {
     [Authorize]
     public class DeleteModel : PageModel
     {
         private readonly SupermarketContext _context;
+        private PayMode payMode = default!;
 
         public DeleteModel(SupermarketContext context)
         {
@@ -18,7 +19,7 @@ namespace SupermarketWEB.Pages.PayModes
         }
 
         [BindProperty]
-        public PayMode PayMode { get; set; } = default!;
+        public PayMode PayMode { get => payMode; set => payMode = value; }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.PayModes == null)
